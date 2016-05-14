@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/tempita-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/tempita-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/tempita-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/tempita-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/tempita-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/tempita-feedstock/branch/master)
