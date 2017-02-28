@@ -13,6 +13,18 @@ tempita is a small templating language. This language implements
 if/elif/else, for/continue/break, expressions, and blocks of Python code.
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/tempita-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/tempita-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/tempita-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/tempita-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/tempita-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/tempita-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/tempita/badges/version.svg)](https://anaconda.org/conda-forge/tempita)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/tempita/badges/downloads.svg)](https://anaconda.org/conda-forge/tempita)
+
 Installing tempita
 ==================
 
@@ -33,7 +45,6 @@ It is possible to list all of the versions of `tempita` available on your platfo
 ```
 conda search tempita --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -69,18 +80,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/tempita-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/tempita-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/tempita-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/tempita-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/tempita-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/tempita-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/tempita/badges/version.svg)](https://anaconda.org/conda-forge/tempita)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/tempita/badges/downloads.svg)](https://anaconda.org/conda-forge/tempita)
 
 
 Updating tempita-feedstock
