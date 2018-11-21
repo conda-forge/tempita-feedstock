@@ -1,4 +1,4 @@
-{% set version="0.5.3dev" %}
+{% set version = "0.5.3dev" %}
 
 package:
   name: tempita
