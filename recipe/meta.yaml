@@ -7,7 +7,7 @@ package:
 source:
   fn: Tempita-{{ version }}dev.tar.gz
   url: https://pypi.io/packages/source/T/Tempita/Tempita-{{ version }}.tar.gz
-  md5: 365c3b4f36435e2178902d5619301140
+  sha256: 38392bb708a10128419f75fa9120a6d2c8d137013b353968e5008a77a5c7a2ca
 
 build:
   number: 0
