@@ -1,4 +1,4 @@
-{% set version="0.5.3dev" %}
+{% set version = "0.5.3dev" %}
 
 package:
   name: tempita
@@ -7,16 +7,16 @@ package:
 source:
   fn: Tempita-{{ version }}dev.tar.gz
   url: https://pypi.io/packages/source/T/Tempita/Tempita-{{ version }}.tar.gz
-  md5: 365c3b4f36435e2178902d5619301140
+  sha256: 38392bb708a10128419f75fa9120a6d2c8d137013b353968e5008a77a5c7a2ca
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
   run:
     - python
 
