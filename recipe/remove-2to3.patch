@@ -1,0 +1,10 @@
+diff --git a/setup.py b/setup.py
+index f575020..678b555 100644
+--- a/setup.py
++++ b/setup.py
+@@ -36,5 +36,4 @@ more to learn about it.
+       test_suite='nose.collector',
+       include_package_data=True,
+       zip_safe=True,
+-      use_2to3=True,
+       )
