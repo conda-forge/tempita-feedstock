@@ -4,8 +4,8 @@ Date: Thu, 2 Nov 2023 09:21:07 +0100
 Subject: [PATCH] error exception
 
 ---
- tempita/__init__.py | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ tempita/__init__.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/tempita/__init__.py b/tempita/__init__.py
 index 137ba2d..2922344 100755
@@ -20,6 +20,15 @@ index 137ba2d..2922344 100755
                  raise SyntaxError(
                      'invalid syntax in expression: %s' % code)
              return value
+@@ -306,7 +306,7 @@ def _eval(self, code, ns, pos):
+             else:
+                 arg0 = coerce_text(e)
+             e.args = (self._add_line_info(arg0, pos),)
+-            raise exc_info[0], e, exc_info[2]
++            raise Exception(exc_info[0], e, exc_info[2])
+ 
+     def _exec(self, code, ns, pos):
+         __traceback_hide__ = True
 @@ -350,7 +350,7 @@ def _repr(self, value, pos):
                          '(no default_encoding provided)' % value)
                  try:
