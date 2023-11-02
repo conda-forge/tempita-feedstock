@@ -1,0 +1,31 @@
+From ef3e7c0f90d1780c6a3c902b10ab702747a45979 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <janssen@mpie.de>
+Date: Thu, 2 Nov 2023 09:21:07 +0100
+Subject: [PATCH] error exception
+
+---
+ tempita/__init__.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tempita/__init__.py b/tempita/__init__.py
+index 137ba2d..2922344 100755
+--- a/tempita/__init__.py
++++ b/tempita/__init__.py
+@@ -294,7 +294,7 @@ def _eval(self, code, ns, pos):
+         try:
+             try:
+                 value = eval(code, self.default_namespace, ns)
+-            except SyntaxError, e:
++            except SyntaxError as e:
+                 raise SyntaxError(
+                     'invalid syntax in expression: %s' % code)
+             return value
+@@ -350,7 +350,7 @@ def _repr(self, value, pos):
+                         '(no default_encoding provided)' % value)
+                 try:
+                     value = value.decode(self.default_encoding)
+-                except UnicodeDecodeError, e:
++                except UnicodeDecodeError as e:
+                     raise UnicodeDecodeError(
+                         e.encoding,
+                         e.object,
