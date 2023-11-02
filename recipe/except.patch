@@ -4,13 +4,22 @@ Date: Thu, 2 Nov 2023 09:21:07 +0100
 Subject: [PATCH] error exception
 
 ---
- tempita/__init__.py | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ tempita/__init__.py | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/tempita/__init__.py b/tempita/__init__.py
 index 137ba2d..2922344 100755
 --- a/tempita/__init__.py
 +++ b/tempita/__init__.py
+@@ -36,7 +36,7 @@ def foo(bar):
+ import re
+ import sys
+ import tokenize
+-from cStringIO import StringIO
++from io import StringIO
+ from urllib import quote as url_quote
+ from tempita._looper import looper
+ from tempita.compat3 import bytes, basestring_, next, is_unicode, coerce_text
 @@ -294,7 +294,7 @@ def _eval(self, code, ns, pos):
          try:
              try:
