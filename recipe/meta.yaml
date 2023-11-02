@@ -8,17 +8,21 @@ source:
   fn: Tempita-{{ version }}dev.tar.gz
   url: https://pypi.io/packages/source/T/Tempita/Tempita-{{ version }}.tar.gz
   sha256: 38392bb708a10128419f75fa9120a6d2c8d137013b353968e5008a77a5c7a2ca
+  patches:
+    - except.patch
+    - setup.patch
 
 build:
-  number: 1002
+  noarch: python
+  number: 1003
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
 
 test:
   imports:
@@ -27,6 +31,7 @@ test:
 about:
   home: http://pythonpaste.org/tempita/
   license: MIT
+  license_file: LICENSE
   summary: A small templating language
   description: |
     tempita is a small templating language. This language implements
@@ -37,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - msarahan
+    - jan-janssen

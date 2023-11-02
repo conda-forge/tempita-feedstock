@@ -1,0 +1,75 @@
+From ef3e7c0f90d1780c6a3c902b10ab702747a45979 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <janssen@mpie.de>
+Date: Thu, 2 Nov 2023 09:21:07 +0100
+Subject: [PATCH] error exception
+
+---
+ tempita/__init__.py | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/tempita/__init__.py b/tempita/__init__.py
+index 137ba2d..2922344 100755
+--- a/tempita/__init__.py
++++ b/tempita/__init__.py
+@@ -36,8 +36,8 @@ def foo(bar):
+ import re
+ import sys
+ import tokenize
+-from cStringIO import StringIO
+-from urllib import quote as url_quote
++from io import StringIO
++from urllib.parse import quote as url_quote
+ from tempita._looper import looper
+ from tempita.compat3 import bytes, basestring_, next, is_unicode, coerce_text
+ 
+@@ -294,7 +294,7 @@ def _eval(self, code, ns, pos):
+         try:
+             try:
+                 value = eval(code, self.default_namespace, ns)
+-            except SyntaxError, e:
++            except SyntaxError as e:
+                 raise SyntaxError(
+                     'invalid syntax in expression: %s' % code)
+             return value
+@@ -306,12 +306,12 @@ def _eval(self, code, ns, pos):
+             else:
+                 arg0 = coerce_text(e)
+             e.args = (self._add_line_info(arg0, pos),)
+-            raise exc_info[0], e, exc_info[2]
++            raise Exception(exc_info[0], e, exc_info[2])
+ 
+     def _exec(self, code, ns, pos):
+         __traceback_hide__ = True
+         try:
+-            exec code in self.default_namespace, ns
++            exec(code in self.default_namespace, ns)
+         except:
+             exc_info = sys.exc_info()
+             e = exc_info[1]
+@@ -319,7 +319,7 @@ def _exec(self, code, ns, pos):
+                 e.args = (self._add_line_info(e.args[0], pos),)
+             else:
+                 e.args = (self._add_line_info(None, pos),)
+-            raise exc_info[0], e, exc_info[2]
++            raise Exception(exc_info[0], e, exc_info[2])
+ 
+     def _repr(self, value, pos):
+         __traceback_hide__ = True
+@@ -341,7 +341,7 @@ def _repr(self, value, pos):
+             exc_info = sys.exc_info()
+             e = exc_info[1]
+             e.args = (self._add_line_info(e.args[0], pos),)
+-            raise exc_info[0], e, exc_info[2]
++            raise Exception(exc_info[0], e, exc_info[2])
+         else:
+             if self._unicode and isinstance(value, bytes):
+                 if not self.default_encoding:
+@@ -350,7 +350,7 @@ def _repr(self, value, pos):
+                         '(no default_encoding provided)' % value)
+                 try:
+                     value = value.decode(self.default_encoding)
+-                except UnicodeDecodeError, e:
++                except UnicodeDecodeError as e:
+                     raise UnicodeDecodeError(
+                         e.encoding,
+                         e.object,
