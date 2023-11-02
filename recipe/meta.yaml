@@ -8,6 +8,8 @@ source:
   fn: Tempita-{{ version }}dev.tar.gz
   url: https://pypi.io/packages/source/T/Tempita/Tempita-{{ version }}.tar.gz
   sha256: 38392bb708a10128419f75fa9120a6d2c8d137013b353968e5008a77a5c7a2ca
+  patches:
+    - setup.patch
 
 build:
   number: 1003
