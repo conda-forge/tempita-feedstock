@@ -13,15 +13,16 @@ source:
     - setup.patch
 
 build:
-  number: 1003
+  noarch: python
+  number: 1004
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
 
 test:
   imports:
