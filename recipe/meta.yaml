@@ -1,4 +1,4 @@
-{% set version = "0.5.3dev" %}
+{% set version = "0.6.0" %}
 
 package:
   name: tempita
@@ -6,15 +6,15 @@ package:
 
 source:
   fn: Tempita-{{ version }}dev.tar.gz
-  url: https://pypi.io/packages/source/T/Tempita/Tempita-{{ version }}.tar.gz
-  sha256: 38392bb708a10128419f75fa9120a6d2c8d137013b353968e5008a77a5c7a2ca
+  url: https://pypi.io/packages/source/T/Tempita/tempita-{{ version }}.tar.gz
+  sha256: 76e15de0137e5011c22949cc15a5161f623fe6a31655751c6d765db6bbac27b6
   patches:
     - except.patch
     - setup.patch
 
 build:
   noarch: python
-  number: 1004
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
