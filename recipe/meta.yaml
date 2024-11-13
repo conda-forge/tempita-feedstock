@@ -6,7 +6,7 @@ package:
 
 source:
   fn: Tempita-{{ version }}dev.tar.gz
-  url: https://pypi.io/packages/source/T/Tempita/tempita-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/T/Tempita/tempita-{{ version }}.tar.gz
   sha256: 76e15de0137e5011c22949cc15a5161f623fe6a31655751c6d765db6bbac27b6
   patches:
     - except.patch
@@ -21,6 +21,7 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - setuptools
   run:
     - python >=3.6
 
